@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Content-Security-Policy test</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https: fastly.picsum.photos" />
+</head>
+<body>
+<h1>Content-Security-Policy test</h1>
+<h2><code>https:</code> — any https: server (listed)</h2>
+<p><img src="https://dummyimage.com/600x400/000/fff" alt="random image"></p>
+<h2><code>http:</code> — any http: server (not listed)</h2>
+<p><img src="https//fastly.picsum.photos/id/37/200/300.jpg?hmac=H-M0-zyAOZnQIHrggRUcDCS_roK8MHKI1OtEgZA72yk" alt="random image"/></p>
+<h2><code>fastly.picsum.photos</code> — any file from this domain (listed)</h2>
+<h3><code>http:</code></h3>
+<p><img src="http://fastly.picsum.photos/id/37/200/300.jpg?hmac=H-M0-zyAOZnQIHrggRUcDCS_roK8MHKI1OtEgZA72yk" alt="random image"></p>
+<h3><code>https:</code></h3>
+<p><img src="https://fastly.picsum.photos/id/37/200/300.jpg?hmac=H-M0-zyAOZnQIHrggRUcDCS_roK8MHKI1OtEgZA72yk" alt="random image"></p>
+</body>
+</html>
